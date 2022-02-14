@@ -1,17 +1,11 @@
+using BlogForEducation.Application.Extensions;
 using BlogForEducation.Infrastructure.Extension;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BlogForEducation.Api
 {
@@ -28,6 +22,8 @@ namespace BlogForEducation.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastucture(Configuration);
+
+            services.AddAplicationLayer();
             
             services.AddControllers();
             
